@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import { isUserLoggedIn } from "./actions/auth.actions"
 import {useDispatch} from "react-redux";
 import { useEffect } from "react";
+import Products from "./containers/Products";
+import Orders from "./containers/Orders";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,11 +22,13 @@ function App() {
     dispatch(isUserLoggedIn())
   }
   },[])
-
+ 
   return (
     <div className="App">  
       <Switch>
         <PrivateRoute path="/" exact component={Home}/>
+        <PrivateRoute path="/products" component={Products}/>
+        <PrivateRoute path="/orders" component={Orders}/>
         <Route path="/signin" exact component={Signin}/>
         <Route path="/signup" exact component={Signup}/>
       </Switch>
