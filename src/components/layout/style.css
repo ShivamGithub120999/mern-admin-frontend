@@ -1,4 +1,4 @@
-/* .sidebar{
+.sidebar{
     position: fixed;
     top: 0;
     bottom: 0;
@@ -10,7 +10,7 @@
 }
 .sidebar a{
     display: block;
-} */
+}
 .sidebar ul{
     margin: 0;
     padding: 0;
