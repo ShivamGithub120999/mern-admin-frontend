@@ -9,7 +9,7 @@ export const signup = (user) => {
         })
 
         if(res.status === 201){
-            console.log("123456")
+           // console.log("123456")
             const{ message } = res.data;
             dispatch({
                 type:userConstants.USER_REGISTER_SUCCESS,

@@ -53,8 +53,8 @@ const buildNewCategories = (parentId, categories, category) => {
 }
 
 
-export default (state = initState, action) => {
-    console.log("Action.Type",action);
+export default (state = initState, action) => {  
+   // console.log("Action.Type",action);
     switch(action.type){
         case categoryConstants.GET_ALL_CATEGORIES_SUCCESS:
             state = {
@@ -71,7 +71,7 @@ export default (state = initState, action) => {
         case categoryConstants.ADD_NEW_CATEGORY_SUCCESS:
             const category = action.payload.category;
             const updatedCategories = buildNewCategories(category.parentId, state.categories, category);
-            console.log('updated categoires', updatedCategories);
+            //console.log('updated categoires', updatedCategories);
             
             state = {
                 ...state,
@@ -86,44 +86,44 @@ export default (state = initState, action) => {
                 error: action.payload.error
             }
             break;
-        // case categoryConstansts.UPDATE_CATEGORIES_REQUEST:
-        //     state = {
-        //         ...state,
-        //         loading: true
-        //     }
-        //     break;
-        // case categoryConstansts.UPDATE_CATEGORIES_SUCCESS:
-        //     state = {
-        //         ...state,
-        //         loading: false
-        //     }
-        //     break;
-        // case categoryConstansts.UPDATE_CATEGORIES_FAILURE:
-        //     state = {
-        //         ...state,
-        //         error: action.payload.error,
-        //         loading: false
-        //     }
-        //     break;
-        // case categoryConstansts.DELETE_CATEGORIES_REQUEST:
-        //     state = {
-        //         ...state,
-        //         loading: true
-        //     }
-        //     break;
-        // case categoryConstansts.DELETE_CATEGORIES_SUCCESS:
-        //     state = {
-        //         ...state,
-        //         loading: false
-        //     }
-        //     break;
-        // case categoryConstansts.DELETE_CATEGORIES_FAILURE:
-        //     state = {
-        //         ...state,
-        //         loading: false,
-        //         error: action.payload.error
-        //     }
-        //     break;
+        case categoryConstants.UPDATE_CATEGORIES_REQUEST:
+            state = {
+                ...state,
+                loading: true
+            }
+            break;
+        case categoryConstants.UPDATE_CATEGORIES_SUCCESS:
+            state = {
+                ...state,
+                loading: false
+            }
+            break;
+        case categoryConstants.UPDATE_CATEGORIES_FAILURE:
+            state = {
+                ...state,
+                error: action.payload.error,
+                loading: false
+            }
+            break;
+        case categoryConstants.DELETE_CATEGORIES_REQUEST:
+            state = {
+                ...state,
+                loading: true
+            }
+            break;
+        case categoryConstants.DELETE_CATEGORIES_SUCCESS:
+            state = {
+                ...state,
+                loading: false
+            }
+            break;
+        case categoryConstants.DELETE_CATEGORIES_FAILURE:
+            state = {
+                ...state,
+                loading: false,
+                error: action.payload.error
+            }
+            break;
     }
 
     return state;

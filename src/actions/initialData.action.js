@@ -24,6 +24,6 @@ import {
           payload: { orders },
         });
       }
-      console.log(res);
+      //console.log(res);
     };
   };

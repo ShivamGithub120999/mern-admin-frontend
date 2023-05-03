@@ -15,7 +15,7 @@ export default (state = initState,action) => {
             }
             break;
         case userConstants.USER_REGISTER_SUCCESS:
-            console.log("123456")
+           // console.log("123456")
             state = {
                 ...state,
                 loading:false,

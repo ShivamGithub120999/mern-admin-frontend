@@ -4,7 +4,7 @@ import { productConstants } from "./constants";
 export const addProduct = (form) => {
     return async (dispatch) => {
         const res = await axios.post(`product/create`, form);
-        console.log("res",res);
+       // console.log("res",res);
     //   try {
     //     dispatch({ type: productConstants.ADD_PRODUCT_REQUEST });
     //     const res = await axios.post(`product/create`, form);

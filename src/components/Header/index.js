@@ -10,7 +10,7 @@ const Header = (props) => {
   const dispatch = useDispatch();
 
   const logout = () => {
-    console.log("hello")
+    //console.log("hello")
     dispatch(signout());
   }
 
