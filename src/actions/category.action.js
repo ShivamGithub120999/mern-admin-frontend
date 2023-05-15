@@ -49,6 +49,7 @@ export const addCategory = (form) => {
 
 
 export const updateCategories = (form) => {
+    console.log("hello");
     return async dispatch => {
         dispatch({ type: categoryConstants.UPDATE_CATEGORIES_REQUEST });
         const res = await axios.post(`/category/update`, form);
