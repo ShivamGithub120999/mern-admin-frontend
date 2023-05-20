@@ -25,9 +25,12 @@ function App() {
     if(!auth.authenticate){
     dispatch(isUserLoggedIn())
   }
-  dispatch(getInitialData());
+
+  if(auth.authenticate){
+     dispatch(getInitialData());
+  }
   dispatch(getAllCategory())
-  },[])
+  },[auth.authenticate]);
  
   return (
     <div className="App">  
