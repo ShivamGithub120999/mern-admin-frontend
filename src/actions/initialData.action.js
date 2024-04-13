@@ -11,6 +11,7 @@ import {
       const res = await axios.post(`/initialData`);
       if (res.status === 200) {
         const { categories, products, orders } = res.data;
+        console.log("orders",orders);
         dispatch({
           type: categoryConstants.GET_ALL_CATEGORIES_SUCCESS,
           payload: { categories },

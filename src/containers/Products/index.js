@@ -3,7 +3,7 @@ import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import Layout from '../../components/layout';
 import { Input } from '../../components/UI/Input';
 import { useSelector, useDispatch } from 'react-redux';
-import { addProduct } from '../../actions';
+import { addProduct, deleteProductById } from '../../actions';
 import { getAllCategory } from '../../actions';
 import Modal from '../../components/UI/Modal';
 import "./style.css"
@@ -84,7 +84,7 @@ const Products = (props) => {
                     <button onClick={() => showProductDetailsModal(product)}>
                       info
                     </button>
-                    {/* <button
+                    <button
                       onClick={() => {
                         const payload = {
                           productId: product._id,
@@ -93,7 +93,7 @@ const Products = (props) => {
                       }}
                     >
                       del
-                    </button> */}
+                    </button>
                   </td>
                             </tr>
                         ))
